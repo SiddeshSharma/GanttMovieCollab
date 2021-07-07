@@ -6,13 +6,24 @@ export const TaskListHeaderDefault: React.FC<{
   rowWidth: string;
   fontFamily: string;
   fontSize: string;
-}> = ({ headerHeight, fontFamily, fontSize, rowWidth }) => {
+  themeBackGroundColor: string;
+  themeTextColor: string;
+}> = ({
+  headerHeight,
+  fontFamily,
+  fontSize,
+  rowWidth,
+  themeBackGroundColor,
+  themeTextColor,
+}) => {
   return (
     <div
       className={styles.ganttTable}
       style={{
         fontFamily: fontFamily,
         fontSize: fontSize,
+        backgroundColor: themeBackGroundColor,
+        color: themeTextColor,
       }}
     >
       <div

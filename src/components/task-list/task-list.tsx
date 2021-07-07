@@ -3,6 +3,7 @@ import { BarTask } from "../../types/bar-task";
 import { Task } from "../../types/public-types";
 
 export type TaskListProps = {
+  todayColor: string;
   headerHeight: number;
   rowWidth: string;
   fontFamily: string;
@@ -11,6 +12,8 @@ export type TaskListProps = {
   ganttHeight: number;
   scrollY: number;
   locale: string;
+  themeBackGroundColor: string;
+  themeTextColor: string;
   tasks: Task[];
   taskListRef: React.RefObject<HTMLDivElement>;
   horizontalContainerClass?: string;
@@ -21,6 +24,8 @@ export type TaskListProps = {
     rowWidth: string;
     fontFamily: string;
     fontSize: string;
+    themeBackGroundColor: string;
+    themeTextColor: string;
   }>;
   TaskListTable: React.FC<{
     rowHeight: number;
@@ -28,6 +33,8 @@ export type TaskListProps = {
     fontFamily: string;
     fontSize: string;
     locale: string;
+    themeBackGroundColor: string;
+    themeTextColor: string;
     tasks: Task[];
     selectedTaskId: string;
     setSelectedTask: (taskId: string) => void;
@@ -50,6 +57,8 @@ export const TaskList: React.FC<TaskListProps> = ({
   horizontalContainerClass,
   TaskListHeader,
   TaskListTable,
+  themeBackGroundColor,
+  themeTextColor,
 }) => {
   const horizontalContainerRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -59,6 +68,8 @@ export const TaskList: React.FC<TaskListProps> = ({
   }, [scrollY]);
 
   const headerProps = {
+    themeBackGroundColor,
+    themeTextColor,
     headerHeight,
     fontFamily,
     fontSize,
@@ -74,6 +85,8 @@ export const TaskList: React.FC<TaskListProps> = ({
     locale,
     selectedTaskId: selectedTaskId,
     setSelectedTask,
+    themeBackGroundColor,
+    themeTextColor,
   };
 
   return (

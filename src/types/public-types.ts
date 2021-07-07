@@ -68,6 +68,8 @@ export interface DisplayOption {
 }
 
 export interface StylingOption {
+  themeBackGroundColor?: string; // pass color that needs to be displayed in the BG
+  themeTextColor?: string; // pass color of the text
   headerHeight?: number;
   columnWidth?: number;
   listCellWidth?: string;
@@ -94,7 +96,7 @@ export interface StylingOption {
   milestoneBackgroundSelectedColor?: string;
   arrowColor?: string;
   arrowIndent?: number;
-  todayColor?: string;
+  todayColor?: string; // this prop is used to choose color of lines in gantt and currentDate Column
   TooltipContent?: React.FC<{
     task: Task;
     fontSize: string;

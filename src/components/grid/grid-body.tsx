@@ -10,6 +10,8 @@ export type GridBodyProps = {
   rowHeight: number;
   columnWidth: number;
   todayColor: string;
+  themeBackGroundColor: string;
+  themeTextColor: string;
 };
 export const GridBody: React.FC<GridBodyProps> = ({
   tasks,
@@ -18,6 +20,7 @@ export const GridBody: React.FC<GridBodyProps> = ({
   svgWidth,
   columnWidth,
   todayColor,
+  themeBackGroundColor,
 }) => {
   let y = 0;
   const gridRows: ReactChild[] = [];
@@ -40,6 +43,7 @@ export const GridBody: React.FC<GridBodyProps> = ({
         width={svgWidth}
         height={rowHeight}
         className={styles.gridRow}
+        style={{ fill: themeBackGroundColor }}
       />
     );
     rowLines.push(
@@ -49,7 +53,7 @@ export const GridBody: React.FC<GridBodyProps> = ({
         y1={y + rowHeight}
         x2={svgWidth}
         y2={y + rowHeight}
-        className={styles.gridRowLine}
+        style={{ stroke: todayColor }}
       />
     );
     y += rowHeight;
@@ -68,7 +72,7 @@ export const GridBody: React.FC<GridBodyProps> = ({
         y1={0}
         x2={tickX}
         y2={y}
-        className={styles.gridTick}
+        style={{ stroke: todayColor }}
       />
     );
     if (

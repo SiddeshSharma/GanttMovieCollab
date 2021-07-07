@@ -53,6 +53,8 @@ export const Gantt: React.FunctionComponent<GanttProps> = ({
   onDoubleClick,
   onDelete,
   onSelect,
+  themeBackGroundColor = "",
+  themeTextColor = "",
 }) => {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const taskListRef = useRef<HTMLDivElement>(null);
@@ -60,7 +62,6 @@ export const Gantt: React.FunctionComponent<GanttProps> = ({
     const [startDate, endDate] = ganttDateRange(tasks, viewMode);
     return { viewMode, dates: seedDates(startDate, endDate, viewMode) };
   });
-
   const [taskHeight, setTaskHeight] = useState((rowHeight * barFill) / 100);
   const [taskListWidth, setTaskListWidth] = useState(0);
   const [svgContainerWidth, setSvgContainerWidth] = useState(0);
@@ -320,6 +321,8 @@ export const Gantt: React.FunctionComponent<GanttProps> = ({
     rowHeight,
     dates: dateSetup.dates,
     todayColor,
+    themeBackGroundColor,
+    themeTextColor,
   };
   const calendarProps: CalendarProps = {
     dateSetup,
@@ -329,6 +332,9 @@ export const Gantt: React.FunctionComponent<GanttProps> = ({
     columnWidth,
     fontFamily,
     fontSize,
+    themeBackGroundColor,
+    themeTextColor,
+    todayColor,
   };
   const barProps: TaskGanttContentProps = {
     tasks: barTasks,
@@ -369,6 +375,9 @@ export const Gantt: React.FunctionComponent<GanttProps> = ({
     setSelectedTask: handleSelectedTask,
     TaskListHeader,
     TaskListTable,
+    themeBackGroundColor,
+    themeTextColor,
+    todayColor,
   };
   return (
     <div>

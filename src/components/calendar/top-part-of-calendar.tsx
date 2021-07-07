@@ -8,6 +8,9 @@ type TopPartOfCalendarProps = {
   y2Line: number;
   xText: number;
   yText: number;
+  themeBackGroundColor: string;
+  themeTextColor: string;
+  todayColor: string;
 };
 
 export const TopPartOfCalendar: React.FC<TopPartOfCalendarProps> = ({
@@ -17,6 +20,8 @@ export const TopPartOfCalendar: React.FC<TopPartOfCalendarProps> = ({
   y2Line,
   xText,
   yText,
+  todayColor,
+  themeTextColor,
 }) => {
   return (
     <g className="calendarTop">
@@ -25,7 +30,8 @@ export const TopPartOfCalendar: React.FC<TopPartOfCalendarProps> = ({
         y1={y1Line}
         x2={x1Line}
         y2={y2Line}
-        className={styles.calendarTopTick}
+        // className={styles.calendarTopTick}
+        style={{ stroke: todayColor }}
         key={value + "line"}
       />
       <text
@@ -33,6 +39,7 @@ export const TopPartOfCalendar: React.FC<TopPartOfCalendarProps> = ({
         y={yText}
         x={xText}
         className={styles.calendarTopText}
+        style={{ fill: themeTextColor }}
       >
         {value}
       </text>

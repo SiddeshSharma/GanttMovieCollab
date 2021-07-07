@@ -8,10 +8,21 @@ export const TaskListTableDefault: React.FC<{
   fontFamily: string;
   fontSize: string;
   locale: string;
+  themeBackGroundColor: string;
+  themeTextColor: string;
   tasks: Task[];
   selectedTaskId: string;
   setSelectedTask: (taskId: string) => void;
-}> = ({ rowHeight, rowWidth, tasks, fontFamily, fontSize, locale }) => {
+}> = ({
+  rowHeight,
+  rowWidth,
+  tasks,
+  fontFamily,
+  fontSize,
+  locale,
+  themeBackGroundColor,
+  themeTextColor,
+}) => {
   const dateTimeOptions = {
     weekday: "short",
     year: "numeric",
@@ -30,7 +41,7 @@ export const TaskListTableDefault: React.FC<{
         return (
           <div
             className={styles.taskListTableRow}
-            style={{ height: rowHeight }}
+            style={{ height: rowHeight, backgroundColor: themeBackGroundColor }}
             key={`${t.id}row`}
           >
             <div
@@ -38,6 +49,7 @@ export const TaskListTableDefault: React.FC<{
               style={{
                 minWidth: rowWidth,
                 maxWidth: rowWidth,
+                color: themeTextColor,
               }}
               title={t.name}
             >
@@ -48,6 +60,7 @@ export const TaskListTableDefault: React.FC<{
               style={{
                 minWidth: rowWidth,
                 maxWidth: rowWidth,
+                color: themeTextColor,
               }}
             >
               &nbsp;{t.start.toLocaleDateString(locale, dateTimeOptions)}
@@ -57,6 +70,7 @@ export const TaskListTableDefault: React.FC<{
               style={{
                 minWidth: rowWidth,
                 maxWidth: rowWidth,
+                color: themeTextColor,
               }}
             >
               &nbsp;

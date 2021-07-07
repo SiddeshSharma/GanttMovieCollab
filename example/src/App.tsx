@@ -74,6 +74,10 @@ const App = () => {
         onSelect={onSelect}
         listCellWidth={isChecked ? "155px" : ""}
         columnWidth={columnWidth}
+        themeBackGroundColor="#171b21"
+        todayColor="#393e46"
+        themeTextColor="white"
+        arrowColor="green"
       />
       <h3>Gantt With Limited Height</h3>
       <Gantt
@@ -87,6 +91,9 @@ const App = () => {
         listCellWidth={isChecked ? "155px" : ""}
         ganttHeight={300}
         columnWidth={columnWidth}
+        themeBackGroundColor="white"
+        themeTextColor="black"
+        todayColor="grey"
       />
     </div>
   );

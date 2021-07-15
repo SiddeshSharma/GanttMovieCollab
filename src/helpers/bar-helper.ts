@@ -57,11 +57,10 @@ export const convertToBarTasks = (
       const dependence = barTasks.findIndex(
         value => value.id === dependencies[j]
       );
-      if (dependence !== -1) barTasks[dependence].barChildren.push(i);
+      if (dependence !== -1) barTasks[i].barChildren.push(dependence);
     }
     return task;
   });
-
   return barTasks;
 };
 

@@ -90,13 +90,7 @@ export const GridBody: React.FC<GridBodyProps> = ({
         ).getTime() >= now.getTime())
     ) {
       today = (
-        <rect
-          x={tickX}
-          y={0}
-          width={columnWidth}
-          height={y}
-          fill={todayColor}
-        />
+        <rect x={tickX} y={0} width={columnWidth} height={y} fill="#fdfdfd00" />
       );
     }
     tickX += columnWidth;

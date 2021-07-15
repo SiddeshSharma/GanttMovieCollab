@@ -6,30 +6,30 @@ export function initTasks() {
   
   const tasks: Task[] = [
     {
-      start: new Date(2020, 1, 1),
-      end: new Date(2020, 1, 4),
+      start: new Date(2021, 7, 1),
+      end: new Date(2021, 7, 4),
       name: "Task 1",
+      dependencies: ["Task 1", "Task 2"],
       id: "Task 0",
-      dependencies: ["Task 1"],
       type: "task",
       progress: 45,
       isDisabled: true,
       styles: { progressColor: "#ffbb54", progressSelectedColor: "#ff9e0d" },
     },
     {
-      start: new Date(2020, 2, 5),
-      end: new Date(2020, 2, 7),
+      start: new Date(2021, 7, 4),
+      end: new Date(2021, 7, 7),
       name: "Task 2",
       id: "Task 1",
-      dependencies: ["Task 2"],
+       dependencies: ["Task 2"],
       type: "task",
       progress: 45,
       isDisabled: true,
       styles: { progressColor: "#ffbb54", progressSelectedColor: "#ff9e0d" },
     },
     {
-      start: new Date(2020, 1, 1),
-      end: new Date(2020, 1, 2),
+      start: new Date(2021, 7, 8),
+      end: new Date(2021, 7, 10),
       name: "Task 3",
       id: "Task 2",
       

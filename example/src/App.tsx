@@ -66,6 +66,7 @@ const App = () => {
       <h3>Gantt With Unlimited Height</h3>
       <Gantt
         tasks={tasks}
+        
         viewMode={view}
         onDateChange={onTaskChange}
         onDelete={onTaskDelete}
